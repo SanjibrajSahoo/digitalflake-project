@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* MAIN */
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e5e7eb;
+}
+
+/* TOPBAR */
+.topbar {
+  height: 64px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.search-input {
+  width: 300px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #38bdf8;
+}
+
+.logout-btn {
+  background: #f97316;
+  color: #020617;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background: #fb923c;
+}
+
+/* CONTENT */
+.content {
+  padding: 32px;
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: #1e293b;
+  border-radius: 14px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* IMPORTANT FIX */
+.item-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(16, 185, 129, 0.15), transparent);
+  opacity: 0;
+  transition: 0.4s;
+  pointer-events: none;
+}
+
+.item-card:hover::before {
+  opacity: 1;
+}
+
+/* ADD CARD */
+.add-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.add-card input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #38bdf8;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 10px;
+  background: #10b981;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #020617;
+}
+
+.primary-btn:hover {
+  background: #34d399;
+}
+
+/* ITEM */
+.item-card h3 {
+  margin: 0 0 6px;
+}
+
+.item-card p {
+  color: #94a3b8;
+  margin-bottom: 14px;
+}
+
+/* ACTIONS */
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  flex: 1;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #020617;
+}
+
+.edit-btn:hover {
+  background: #7dd3fc;
+}
+
+.delete-btn {
+  flex: 1;
+  background: #f97316;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #020617;
+}
+
+.delete-btn:hover {
+  background: #fb923c;
+}
+
+/* EMPTY */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #94a3b8;
+}
+
+/* SKELETON */
+.skeleton-card {
+  height: 140px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #1e293b 25%, #334155 37%, #1e293b 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
